@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">prova-SmartTasks</string>
+    <string name="cadastro_tarefa">Cadastro de Tarefa</string>
+    <string name="titulo_tarefa">Título:</string>>
+    <string name="descricao_tarefa">Descricao:</string>
+    <string name="data_tarefa">Insira a Data Da Tarefa</string>
+    <string name="botao_salvar">Salvar</string>>
+    <string name="botao_voltar">Voltar</string>
+    <string name="resultado_cadastro_de_tarefa">Nova Tarefa:</string>
+</resources>
