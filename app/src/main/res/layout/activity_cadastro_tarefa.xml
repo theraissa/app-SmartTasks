@@ -80,7 +80,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/data_tarefa"
-            android:inputType="date"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none"
             android:gravity="center"
             android:layout_marginTop="20dp"/>
 
