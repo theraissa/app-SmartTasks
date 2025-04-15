@@ -82,7 +82,7 @@ public class CadastroTarefa extends AppCompatActivity {
         int anoAtual = hoje.get(Calendar.YEAR);
         int mesAtual = hoje.get(Calendar.MONTH);
         int diaAtual = hoje.get(Calendar.DAY_OF_MONTH);
-        avisoCadastroTarefa.setText("Nova Tarefa:" + diaAtual + "/" + mesAtual + "/" + anoAtual);
+        avisoCadastroTarefa.setText("Nova Tarefa:" +diaAtual+ "/" +mesAtual+ "/" +anoAtual);
     }
     public void SalvarTarefa(View view){
         cadastrarDataDeTarefa();
@@ -91,12 +91,6 @@ public class CadastroTarefa extends AppCompatActivity {
     public void AbrirTelaPrincipal(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        registrarTarefa();
     }
 
     public void criarBancoDados() {
