@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3EE98"
+    android:background="@color/fundo"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -22,7 +22,7 @@
                 android:id="@+id/textView"
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-                android:background="#A0D683"
+                android:background="@color/superior"
                 android:text="SmartTasks"
                 android:textColor="@color/white"
                 android:textSize="24sp"
