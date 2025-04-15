@@ -1,4 +1,13 @@
 <resources>
+    <!--TELA PRINCIPAL -->
+    <string name="titulo_app">SmartTasks</string>
+    <string name="botao_cadastro">Cadastro de Tarefas</string>
+    <string name="botao_listar">Listagem de Tarefas</string>
+    <string name="botao_compartilhar">Compartilhar Link</string>
+    <string name="botao_analise">Análise Inteligente</string>
+    <string name="botao_sobre">Sobre</string>
+
+    <!-- CADASTRO TAREFA -->
     <string name="app_name">prova-SmartTasks</string>
     <string name="cadastro_tarefa">Cadastro de Tarefa</string>
     <string name="titulo_tarefa">Título:</string>>

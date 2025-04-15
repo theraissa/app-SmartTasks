@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3EE98"
+    android:background="@color/fundo"
     tools:context=".CadastroTarefa">
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:id="@+id/textViewCadastroTarefa"
             android:layout_width="fill_parent"
             android:layout_height="80dp"
-            android:background="#A0D683"
+            android:background="@color/superior"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"

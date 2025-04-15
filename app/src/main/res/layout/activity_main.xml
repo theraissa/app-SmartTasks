@@ -23,7 +23,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:background="@color/superior"
-                android:text="SmartTasks"
+                android:text="@string/titulo_app"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -41,16 +41,20 @@
                 android:id="@+id/buttonCadastroTarefas"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
+                android:paddingLeft="30dp"
                 android:layout_marginBottom="20dp"
+                android:drawableLeft="@drawable/plus_solid"
                 android:background="@drawable/borda_redonda"
                 android:onClick="AbrirTelaCadastroTarefa"
-                android:text="Cadastro de Tarefas" />
+                android:text="@string/botao_cadastro"/>
 
             <Button
                 android:id="@+id/buttonListagemTarefas"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:text="Listagem de Tarefas"
+                android:paddingLeft="30dp"
+                android:drawableLeft="@drawable/list_solid"
+                android:text="@string/botao_listar"
                 android:background="@drawable/borda_redonda"
                 android:layout_marginBottom="20dp"/>
 
@@ -58,7 +62,9 @@
                 android:id="@+id/buttonCompartilharLink"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:text="Compartilhar Link"
+                android:paddingLeft="30dp"
+                android:drawableLeft="@drawable/link_solid"
+                android:text="@string/botao_compartilhar"
                 android:background="@drawable/borda_redonda"
                 android:layout_marginBottom="20dp"/>
 
@@ -66,12 +72,23 @@
                 android:id="@+id/buttonAnaliseInteligente"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:text="Análise Inteligente"
+                android:paddingLeft="30dp"
+                android:drawableLeft="@drawable/lightbulb_solid"
+                android:text="@string/botao_analise"
+                android:background="@drawable/borda_redonda"
+                android:layout_marginBottom="20dp"/>
+
+            <Button
+                android:id="@+id/buttonSobre"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:paddingLeft="30dp"
+                android:drawableLeft="@drawable/face_smile_solid"
+                android:text="@string/botao_sobre"
                 android:background="@drawable/borda_redonda"
                 android:layout_marginBottom="20dp"/>
 
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
