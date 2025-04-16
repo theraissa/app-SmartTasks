@@ -55,6 +55,7 @@ public class CadastroTarefa extends AppCompatActivity {
         });
         criarBancoDados();
     }
+
     private void abrirJanela(){
         int ano = dataCadastroTarefa.get(Calendar.YEAR);
         int mes = dataCadastroTarefa.get(Calendar.MONTH);
@@ -75,11 +76,9 @@ public class CadastroTarefa extends AppCompatActivity {
     private void updateLabel() {
         String myformat = "dd/MM/yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myformat, new Locale("pt", "BR"));
-       // dataDaTarefa.setText(sdf.format(dataCadastroTarefa.getTime()));
+        dataDaTarefa.setText(sdf.format(dataCadastroTarefa.getTime()));
         avisoCadastroTarefa.setText("Nova Tarefa:" + sdf.format(dataCadastroTarefa.getTime()));
-
     }
-
     public void cadastrarDataDeTarefa(){
         Calendar hoje = Calendar.getInstance();
         int anoAtual = hoje.get(Calendar.YEAR);
@@ -87,9 +86,7 @@ public class CadastroTarefa extends AppCompatActivity {
         int diaAtual = hoje.get(Calendar.DAY_OF_MONTH);
         //avisoCadastroTarefa.setText("Nova Tarefa:" +diaAtual+ " / " +mesAtual+ " / " +anoAtual);
         //avisoCadastroTarefa.setText("Nova Tarefa:" + sdf.format(dataCadastroTarefa.getTime()));
-
     }
-
     public void SalvarTarefa(View view){
         //cadastrarDataDeTarefa();
         registrarTarefa();
@@ -99,7 +96,6 @@ public class CadastroTarefa extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
     public void criarBancoDados() {
         bancoDados = openOrCreateDatabase("tarefaDB", MODE_PRIVATE, null);
         try {
