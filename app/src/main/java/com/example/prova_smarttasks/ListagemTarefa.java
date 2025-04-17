@@ -37,8 +37,8 @@ public class ListagemTarefa extends AppCompatActivity {
             return insets;
         });
 
+        listaTarefas = findViewById(R.id.listViewTarefas);
         listarBanco();
-        //listaTarefas = findViewById(R.id.recyclerViewLista);
 
 
     }
@@ -56,7 +56,7 @@ public class ListagemTarefa extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 linhas
         );
-        //listaTarefas.setAdapter(meuAdapter);
+        listaTarefas.setAdapter(meuAdapter);
 
         try {
             if (meuCursor.moveToFirst()) {
