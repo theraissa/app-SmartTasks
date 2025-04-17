@@ -19,6 +19,7 @@
 
     <!--LISTAGEM TAREFA -->
     <string name="listagem_tarefa">Listagem Tarefa</string>
+    <string name="botao_detalhar">Detalhar</string>
 
 
 </resources>

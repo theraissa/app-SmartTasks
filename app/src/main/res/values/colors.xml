@@ -5,4 +5,5 @@
     <color name="fundo">#D3EE98</color>
     <color name="superior">#A0D683</color>
     <color name="botao">#FEFF9F</color>
+    <color name="borda_tarefa">#72BF78</color>
 </resources>
