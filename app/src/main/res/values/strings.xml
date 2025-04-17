@@ -5,7 +5,7 @@
     <string name="botao_listar">Listagem de Tarefas</string>
     <string name="botao_compartilhar">Compartilhar Link</string>
     <string name="botao_analise">Análise Inteligente</string>
-    <string name="botao_sobre">Sobre</string>
+    <string name="botao_sobre">Sobre Nós</string>
 
     <!-- CADASTRO TAREFA -->
     <string name="app_name">prova-SmartTasks</string>
@@ -16,4 +16,9 @@
     <string name="botao_salvar">Salvar</string>>
     <string name="botao_voltar">Voltar</string>
     <string name="resultado_cadastro_de_tarefa">Nova Tarefa:</string>
+
+    <!--LISTAGEM TAREFA -->
+    <string name="listagem_tarefa">Listagem Tarefa</string>
+
+
 </resources>

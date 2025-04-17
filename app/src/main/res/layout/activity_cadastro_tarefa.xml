@@ -109,7 +109,7 @@
             android:textAlignment="center"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonVoltarCadastro"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:text="@string/botao_voltar"
