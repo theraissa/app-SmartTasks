@@ -37,6 +37,7 @@
 
 
         <LinearLayout
+            android:id="@+id/linearLayoutListagem"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -56,6 +57,7 @@
                 android:text="Nome da Tarefa:" />
 
             <Button
+                android:id="@+id/buttonDetalhar"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_gravity="right"
