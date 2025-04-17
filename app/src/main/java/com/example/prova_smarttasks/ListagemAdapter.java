@@ -17,12 +17,12 @@ public class ListagemAdapter extends RecyclerView.Adapter<ListagemAdapter.MyView
     private OnDetalharClickListener listener;
 
     public interface OnDetalharClickListener {
-        void onDetalharClick(Listagem tarefa);
+        void onDetalharClick(Listagem listagem);
     }
 
     //método construtor
-    public ListagemAdapter(List<Listagem> listaTarefas, OnDetalharClickListener listener) {
-        this.listagemTarefas = listaTarefas;
+    public ListagemAdapter(List<Listagem> listagemTarefas, OnDetalharClickListener listener) {
+        this.listagemTarefas = listagemTarefas;
         this.listener = listener;
     }
 
@@ -38,9 +38,9 @@ public class ListagemAdapter extends RecyclerView.Adapter<ListagemAdapter.MyView
         }
 
         //conecta dados com a view, como coloca o nome da tarefa no TextView
-        public void bind(Listagem tarefa, OnDetalharClickListener listener) {
-            nome.setText(tarefa.getNome());
-            botaoDetalhar.setOnClickListener(v -> listener.onDetalharClick(tarefa));
+        public void bind(Listagem listagem, OnDetalharClickListener listener) {
+            nome.setText(listagem.getNome());
+            botaoDetalhar.setOnClickListener(v -> listener.onDetalharClick(listagem));
         }
     }
 
@@ -48,7 +48,7 @@ public class ListagemAdapter extends RecyclerView.Adapter<ListagemAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View item = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_listagem_tarefa, parent, false);
+                .inflate(R.layout.item_tarefa, parent, false);
         return new MyViewHolder(item);
     }
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fundo"
-    tools:context=".ListagemTarefa">
+    tools:context=".SobreNos">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -29,17 +29,25 @@
                 android:layout_height="match_parent"
                 android:background="@color/superior"
                 android:gravity="center"
-                android:text="@string/listagem_tarefa"
+                android:text="@string/sobre_nos"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewListagemTarefas"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="460dp"
-            android:layout_margin="15dp" />
+            android:layout_height="250dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
