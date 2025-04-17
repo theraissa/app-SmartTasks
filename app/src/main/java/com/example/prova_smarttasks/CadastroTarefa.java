@@ -87,10 +87,10 @@ public class CadastroTarefa extends AppCompatActivity {
         //avisoCadastroTarefa.setText("Nova Tarefa:" +diaAtual+ " / " +mesAtual+ " / " +anoAtual);
         //avisoCadastroTarefa.setText("Nova Tarefa:" + sdf.format(dataCadastroTarefa.getTime()));
     }
-    public void SalvarTarefa(View view){
+    public void SalvarTarefa(View v){
         //cadastrarDataDeTarefa();
         registrarTarefa();
-        updateLabel();
+        //updateLabel();
     }
     public void AbrirTelaPrincipal(View v) {
         Intent intent = new Intent(this, MainActivity.class);
@@ -119,8 +119,9 @@ public class CadastroTarefa extends AppCompatActivity {
                 stmt.bindString(2, descricao.getText().toString());
                 stmt.bindString(3, dataDaTarefa.getText().toString());
                 stmt.executeInsert();
-                finish();
-                Log.i(null, "Registros inseridos com sucesso!");
+                Log.i(null, "Registros inseridos com sucesso!" + stmt + "valores" + titulo.getText().toString() + descricao.getText().toString() + dataDaTarefa.getText().toString());
+                bancoDados.close();
+                Log.i(null, "Conexao com banco de dados encerrada");
             } catch (Exception e) {
                 Log.i(null, "Erro ao inserir no Banco de Dados!");
             }
