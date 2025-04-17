@@ -34,14 +34,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="30dp">
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/buttonCadastroTarefas"
-                android:layout_width="350dp"
+                android:layout_width="300dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:paddingLeft="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:drawableLeft="@drawable/plus_solid"
                 android:background="@drawable/borda_redonda"
@@ -50,28 +51,33 @@
 
             <Button
                 android:id="@+id/buttonListagemTarefas"
-                android:layout_width="350dp"
+                android:layout_width="300dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:paddingLeft="30dp"
                 android:drawableLeft="@drawable/list_solid"
                 android:text="@string/botao_listar"
+                android:onClick="AbrirTelaListagemTarefas"
                 android:background="@drawable/borda_redonda"
                 android:layout_marginBottom="20dp"/>
 
             <Button
                 android:id="@+id/buttonCompartilharLink"
-                android:layout_width="350dp"
+                android:layout_width="300dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:paddingLeft="30dp"
                 android:drawableLeft="@drawable/link_solid"
                 android:text="@string/botao_compartilhar"
+                android:onClick="AbrirTelaCompartilharLink"
                 android:background="@drawable/borda_redonda"
                 android:layout_marginBottom="20dp"/>
 
             <Button
                 android:id="@+id/buttonAnaliseInteligente"
-                android:layout_width="350dp"
+                android:layout_width="300dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:paddingLeft="30dp"
                 android:drawableLeft="@drawable/lightbulb_solid"
                 android:text="@string/botao_analise"
@@ -80,15 +86,17 @@
 
             <Button
                 android:id="@+id/buttonSobre"
-                android:layout_width="350dp"
+                android:layout_width="300dp"
                 android:layout_height="50dp"
-                android:paddingLeft="30dp"
-                android:drawableLeft="@drawable/face_smile_solid"
-                android:text="@string/botao_sobre"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/borda_redonda"
-                android:layout_marginBottom="20dp"/>
+                android:drawableLeft="@drawable/face_smile_solid"
+                android:paddingLeft="30dp"
+                android:text="@string/botao_sobre" />
 
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

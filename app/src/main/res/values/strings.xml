@@ -21,5 +21,13 @@
     <string name="listagem_tarefa">Listagem Tarefa</string>
     <string name="botao_detalhar">Detalhar</string>
 
+    <!--DETALHAR TAREFA -->
+    <string name="detalhar_tarefa">Detalhar Tarefa</string>
+    <string name="botao_voltar_listagem">Voltar para Listagem</string>
+
+    <!-- COMPARTILHAR LINKS -->
+    <string name="compartilhar_link">Compartilhar Link</string>
+    <string name="btn_link_ifrs">IFRS - Campus Rolante</string>
+    <string name="btn_link_git">Projeto - GitHub</string>
 
 </resources>

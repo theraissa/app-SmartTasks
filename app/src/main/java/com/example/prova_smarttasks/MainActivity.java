@@ -31,4 +31,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void AbrirTelaListagemTarefas(View v) {
+        Intent intent = new Intent(this, ListagemTarefa.class);
+        startActivity(intent);
+    }
+
+    public void AbrirTelaCompartilharLink(View v) {
+        Intent intent = new Intent(this, CompartilharLink.class);
+        startActivity(intent);
+    }
+
 }

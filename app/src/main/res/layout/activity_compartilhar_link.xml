@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fundo"
-    tools:context=".ListagemTarefa">
+    tools:context=".CompartilharLink">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -29,55 +29,42 @@
                 android:layout_height="match_parent"
                 android:background="@color/superior"
                 android:gravity="center"
-                android:text="@string/listagem_tarefa"
+                android:text="@string/compartilhar_link"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-
-        <LinearLayout
-            android:id="@+id/linearLayoutListagem"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:paddingTop="10dp"
-            android:background="@drawable/borda_linear_layout"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textViewNomeListagem"
-                android:layout_width="200dp"
-                android:layout_height="30dp"
-                android:layout_margin="10dp"
-                android:layout_gravity="left"
-                android:padding="3dp"
-                android:text="Nome da Tarefa:" />
-
-            <Button
-                android:id="@+id/buttonDetalhar"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:layout_gravity="right"
-                android:background="@drawable/borda_redonda"
-                android:text="@string/botao_detalhar" />
-
-
-        </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/buttonVoltarListagem"
+                android:id="@+id/buttonLinkGit"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/borda_redonda"
+                android:text="@string/btn_link_git" />
+
+            <Button
+                android:id="@+id/buttonLinkIFRS"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/borda_redonda"
+                android:text="@string/btn_link_ifrs" />
+
+            <Button
+                android:id="@+id/buttonVoltarCompartilhar"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
                 android:onClick="AbrirTelaPrincipal"
                 android:background="@drawable/borda_redonda"
                 android:text="@string/botao_voltar" />
@@ -85,5 +72,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
