@@ -53,7 +53,7 @@ public class ListagemTarefa extends AppCompatActivity {
         Cursor meuCursor = bancoDeDados.rawQuery("SELECT id, titulo, descricao, data FROM tarefa", null);
         ArrayList<String> linhas = new ArrayList<>();
         ArrayAdapter<String> meuAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1,
+                android.R.layout.simple_expandable_list_item_1,
                 linhas
         );
         listaTarefas.setAdapter(meuAdapter);
