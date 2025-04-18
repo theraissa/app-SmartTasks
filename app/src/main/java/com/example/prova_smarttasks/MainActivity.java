@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void AbrirTelaAnaliseInteligente(View v) {
+        Intent intent = new Intent(this, AnaliseInteligente.class);
+        startActivity(intent);
+    }
+
     public void AbrirTelaSobreNos(View v) {
         Intent intent = new Intent(this, SobreNos.class);
         startActivity(intent);

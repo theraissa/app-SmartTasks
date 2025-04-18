@@ -78,11 +78,12 @@
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:paddingLeft="30dp"
-                android:drawableLeft="@drawable/lightbulb_solid"
-                android:text="@string/botao_analise"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/borda_redonda"
-                android:layout_marginBottom="20dp"/>
+                android:drawableLeft="@drawable/lightbulb_solid"
+                android:onClick="AbrirTelaAnaliseInteligente"
+                android:paddingLeft="30dp"
+                android:text="@string/botao_analise" />
 
             <Button
                 android:id="@+id/buttonSobre"
