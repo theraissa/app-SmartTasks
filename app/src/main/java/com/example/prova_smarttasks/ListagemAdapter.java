@@ -1,61 +1,60 @@
 package com.example.prova_smarttasks;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 public class ListagemAdapter extends RecyclerView.Adapter<ListagemAdapter.MyViewHolder> {
 
-    private List<Listagem> listagemTarefas;
-    private OnDetalharClickListener listener;
+    private List<Tarefa> listagemTarefas;
+    private Context context;
 
-    public interface OnDetalharClickListener {
-        void onDetalharClick(Listagem tarefa);
+    //Construtor
+    public ListagemAdapter(Context context, List<Tarefa> listagemTarefas) {
+        this.context = context;
+        this.listagemTarefas = listagemTarefas;
     }
 
-    //método construtor
-    public ListagemAdapter(List<Listagem> listaTarefas, OnDetalharClickListener listener) {
-        this.listagemTarefas = listaTarefas;
-        this.listener = listener;
-    }
-
-    //Aqui definimos os elementos que vamos manipular para cada item da lista
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView nome;
-        Button botaoDetalhar;
+        TextView titulo;
+        Button btnDetalhes;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            nome = itemView.findViewById(R.id.textViewNomeListagem);
-            botaoDetalhar = itemView.findViewById(R.id.buttonDetalhar);
-        }
-
-        //conecta dados com a view, como coloca o nome da tarefa no TextView
-        public void bind(Listagem tarefa, OnDetalharClickListener listener) {
-            nome.setText(tarefa.getNome());
-            botaoDetalhar.setOnClickListener(v -> listener.onDetalharClick(tarefa));
+            titulo = itemView.findViewById(R.id.textViewNomeListagem);
+            btnDetalhes = itemView.findViewById(R.id.buttonDetalhar);
         }
     }
+    //O ViewHolder guarda as referências dos elementos visuais de cada item da lista
+    //O itemView representa um único card/item da lista que está na tela.
+    // Ele é baseado no XML item_tarefa.xml.
 
-    @NonNull
+    //Esse método cria o layout visual de cada item da lista
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View item = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_listagem_tarefa, parent, false);
-        return new MyViewHolder(item);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_tarefa, parent, false);
+        return new MyViewHolder(view);
     }
 
-    //Aqui colocamos os dados da tarefa no item visual correspondente da posição atual.
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.bind(listagemTarefas.get(position), listener);
+        Tarefa tarefa = listagemTarefas.get(position);
+        holder.titulo.setText(tarefa.getTitulo());
+
+        holder.btnDetalhes.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DetalharTarefa.class);
+            // Para passar os dados da tarefa, implemente Parcelable na classe Tarefa
+            // intent.putExtra("tarefa", tarefa);
+            context.startActivity(intent);
+        });
     }
 
     @Override
