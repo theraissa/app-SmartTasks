@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.Console;
@@ -23,8 +24,9 @@ import java.util.List;
 public class ListagemTarefa extends AppCompatActivity {
 
     private SQLiteDatabase bancoDeDados;
-    public ListView listaTarefas;
-    ArrayList<Integer> arrayIds;
+    private RecyclerView recyclerView;
+    private ListagemAdapter adapter;
+    private ArrayList<Tarefa> listaTarefas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +39,15 @@ public class ListagemTarefa extends AppCompatActivity {
             return insets;
         });
 
-        listarBanco();
-        //listaTarefas = findViewById(R.id.recyclerViewLista);
+        recyclerView = findViewById(R.id.recyclerViewListagemTarefas);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        listaTarefas = new ArrayList<>();
+
+        listarBanco(); // preenche listaTarefas
+
+        adapter = new ListagemAdapter(this, listaTarefas);
+        recyclerView.setAdapter(adapter);
 
     }
     public void AbrirTelaPrincipal(View v) {
@@ -48,28 +56,33 @@ public class ListagemTarefa extends AppCompatActivity {
     }
 
     public void listarBanco() {
-        arrayIds = new ArrayList<Integer>();
-        bancoDeDados = openOrCreateDatabase("tarefaDB", MODE_PRIVATE, null);
-        Cursor meuCursor = bancoDeDados.rawQuery("SELECT id, titulo, descricao, data FROM tarefa", null);
-        ArrayList<String> linhas = new ArrayList<>();
-        ArrayAdapter<String> meuAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1,
-                linhas
-        );
-        //listaTarefas.setAdapter(meuAdapter);
-
         try {
-            if (meuCursor.moveToFirst()) {
-                Log.d("banco", meuCursor.getString(1));
+            bancoDeDados = openOrCreateDatabase("tarefaDB", MODE_PRIVATE, null);
+            Cursor cursor = bancoDeDados.rawQuery("SELECT id, titulo, descricao, data FROM tarefa", null);
+
+            if (cursor.moveToFirst()) {
                 do {
-                    String linha = "Tarefa: " + meuCursor.getString(1);
-                    linhas.add(linha);
-                    arrayIds.add(meuCursor.getInt(0));
-                } while (meuCursor.moveToNext());
-                meuCursor.close();
+                    int id = cursor.getInt(0);
+                    String titulo = cursor.getString(1);
+                    String descricao = cursor.getString(2);
+                    String data = cursor.getString(3);
+
+                    Tarefa tarefa = new Tarefa(id, titulo, descricao, data);
+                    listaTarefas.add(tarefa);
+                } while (cursor.moveToNext());
             }
+
+            cursor.close();
         } catch (Exception e) {
-            Log.i("DB", "erro ao acessar banco de dados");
+            e.printStackTrace();
         }
     }
+
+
+
+
+
+
+
+
 }
