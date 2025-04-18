@@ -48,6 +48,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/borda_redonda"
+                android:onClick="linkGit"
                 android:text="@string/btn_link_git" />
 
             <Button
@@ -57,6 +58,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/borda_redonda"
+                android:onClick="linkCampus"
                 android:text="@string/btn_link_ifrs" />
 
             <Button
