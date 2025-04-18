@@ -30,6 +30,9 @@
     <string name="btn_link_ifrs">IFRS - Campus Rolante</string>
     <string name="btn_link_git">Projeto - GitHub</string>
 
+    <!-- COMPARTILHAR LINKS -->
+    <string name="analise_inteligente">Análise Inteligente</string>
+
     <!-- SOBRE NÓS -->
     <string name="sobre_nos">Sobre Nós</string>
 
