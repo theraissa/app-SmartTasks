@@ -32,6 +32,8 @@
 
     <!-- SOBRE NÓS -->
     <string name="sobre_nos">Sobre Nós</string>
-
+    <string name="nome_raissa">✨Raissa Maciel Lima</string>
+    <string name="nome_gabriel">⚙️Gabriel Felipe Rost</string>
+    <string name="descricao_sobre_nos">Somos estudantes do curso de Análise e Desenvolvimento de Sistemas no IFRS – Campus Rolante, atualmente no 5º semestre. Este aplicativo foi desenvolvido com fins educacionais.</string>
 
 </resources>
