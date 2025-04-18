@@ -90,6 +90,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
+                android:onClick="AbrirTelaSobreNos"
                 android:background="@drawable/borda_redonda"
                 android:drawableLeft="@drawable/face_smile_solid"
                 android:paddingLeft="30dp"
