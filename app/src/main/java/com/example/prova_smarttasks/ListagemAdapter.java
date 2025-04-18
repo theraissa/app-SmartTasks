@@ -51,8 +51,10 @@ public class ListagemAdapter extends RecyclerView.Adapter<ListagemAdapter.MyView
 
         holder.btnDetalhes.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetalharTarefa.class);
-            // Para passar os dados da tarefa, implemente Parcelable na classe Tarefa
-            // intent.putExtra("tarefa", tarefa);
+            intent.putExtra("id", tarefa.getId());  // Passando o ID da tarefa
+            intent.putExtra("titulo", tarefa.getTitulo());  // Passando o título
+            intent.putExtra("descricao", tarefa.getDescricao());  // Passando a descrição
+            intent.putExtra("data", tarefa.getData());  // Passando a data
             context.startActivity(intent);
         });
     }
@@ -61,4 +63,5 @@ public class ListagemAdapter extends RecyclerView.Adapter<ListagemAdapter.MyView
     public int getItemCount() {
         return listagemTarefas.size();
     }
+
 }

@@ -6,18 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fundo"
+    android:weightSum="1"
     tools:context=".DetalharTarefa">
 
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,16 +34,17 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="320dp"
-            android:layout_height="500dp"
-            android:layout_margin="20dp"
+            android:layout_width="300dp"
+            android:layout_height="350dp"
             android:layout_gravity="center"
+            android:weightSum="1"
+            android:layout_margin="20dp"
             android:background="@drawable/borda_linear_layout"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textViewNomeTarefa"
-                android:layout_width="300dp"
+                android:layout_width="280dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:text="Nome tarefa"
@@ -57,9 +55,9 @@
 
             <TextView
                 android:id="@+id/textViewDescricaoTarefa"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="280dp"
+                android:layout_height="200dp"
+                android:layout_margin="20dp"
                 android:text="Descrição da tarefa"
                 android:textSize="16dp"
                 android:layout_gravity="center"
@@ -67,9 +65,8 @@
 
             <TextView
                 android:id="@+id/textViewDataTarefa"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="280dp"
+                android:layout_height="30dp"
                 android:text="Data da tarefa:"
                 android:textSize="16dp"
                 android:textStyle="bold"
@@ -80,15 +77,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:orientation="horizontal"
-            android:padding="30dp">
+            android:layout_height="100dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/buttonVoltarDetalhar"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:onClick="AbrirTelaListagemTarefas"
                 android:background="@drawable/borda_redonda"
                 android:text="@string/botao_voltar_listagem" />
 
