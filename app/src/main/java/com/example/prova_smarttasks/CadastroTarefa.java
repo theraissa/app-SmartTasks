@@ -68,7 +68,7 @@ public class CadastroTarefa extends AppCompatActivity {
                 dataCadastroTarefa.set(Calendar.MONTH, month);
                 dataCadastroTarefa.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                 updateLabel();
-                //cadastrarDataDeTarefa();
+                //dataAtual();
             }
         }, ano, mes, dia);
         datePickerDialog.show();
@@ -79,22 +79,51 @@ public class CadastroTarefa extends AppCompatActivity {
         dataDaTarefa.setText(sdf.format(dataCadastroTarefa.getTime()));
         avisoCadastroTarefa.setText("Nova Tarefa:" + sdf.format(dataCadastroTarefa.getTime()));
     }
-    public void cadastrarDataDeTarefa(){
+    public boolean validarData(int ano, int mes, int dia) {
+        // Cria data informada com hora zerada
+        Calendar dataInformada = Calendar.getInstance();
+        dataInformada.set(ano, mes, dia, 0, 0, 0);
+        dataInformada.set(Calendar.MILLISECOND, 0);
+
+        // Cria "hoje" com hora zerada
         Calendar hoje = Calendar.getInstance();
-        int anoAtual = hoje.get(Calendar.YEAR);
-        int mesAtual = hoje.get(Calendar.MONTH);
-        int diaAtual = hoje.get(Calendar.DAY_OF_MONTH);
-        //avisoCadastroTarefa.setText("Nova Tarefa:" +diaAtual+ " / " +mesAtual+ " / " +anoAtual);
-        //avisoCadastroTarefa.setText("Nova Tarefa:" + sdf.format(dataCadastroTarefa.getTime()));
+        hoje.set(Calendar.HOUR_OF_DAY, 0);
+        hoje.set(Calendar.MINUTE, 0);
+        hoje.set(Calendar.SECOND, 0);
+        hoje.set(Calendar.MILLISECOND, 0);
+
+        // Debug opcional
+        Log.i("ValidacaoData", "Data informada: " + dataInformada.getTime());
+        Log.i("ValidacaoData", "Data hoje: " + hoje.getTime());
+
+        String myformat = "dd/MM/yyyy";
+        SimpleDateFormat sdf = new SimpleDateFormat(myformat, new Locale("pt", "BR"));
+        //avisoCadastroTarefa.setText("Data Inválida! (" + sdf.format(dataInformada.getTime()) + ") Insira uma igual ou superior a de hoje");
+        // Retorna true se a data informada for hoje ou futura
+        if (dataInformada.compareTo(hoje) >= 0){
+            avisoCadastroTarefa.setText("Nova tarefa para o dia: " + sdf.format(dataInformada.getTime()));
+            return true;
+        } else {
+            avisoCadastroTarefa.setText("Data Inválida! (" + sdf.format(dataInformada.getTime()) + ") Insira uma igual ou superior a de hoje");
+            return false;
+        }
     }
+
+
     public void SalvarTarefa(View v){
-        //cadastrarDataDeTarefa();
-        registrarTarefa();
+        Log.i("Save", "Funcao para salvar tarefa");
+        //dataAtual();
+        if (validarData((dataCadastroTarefa.get(Calendar.YEAR)),
+                (dataCadastroTarefa.get(Calendar.MONTH)),
+                (dataCadastroTarefa.get(Calendar.DAY_OF_MONTH)))) {
+            registrarTarefa();
+        }
         //updateLabel();
     }
     public void AbrirTelaPrincipal(View v) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+        finish();
     }
     public void criarBancoDados() {
         bancoDados = openOrCreateDatabase("tarefaDB", MODE_PRIVATE, null);
@@ -104,9 +133,9 @@ public class CadastroTarefa extends AppCompatActivity {
                     "titulo VARCHAR," +
                     "descricao VARCHAR," +
                     "data VARCHAR)");
-            Log.i(null, "Banco criado!!");
+            Log.i("DB", "Banco criado!!");
         } catch (Exception e) {
-            Log.i(null, "Erro ao criar banco :/");
+            Log.i("DB", "Erro ao criar banco :/");
         }
     }
     public void registrarTarefa() {
@@ -119,7 +148,7 @@ public class CadastroTarefa extends AppCompatActivity {
                 stmt.bindString(2, descricao.getText().toString());
                 stmt.bindString(3, dataDaTarefa.getText().toString());
                 stmt.executeInsert();
-                Log.i(null, "Registros inseridos com sucesso!" + stmt + "valores" + titulo.getText().toString() + descricao.getText().toString() + dataDaTarefa.getText().toString());
+                Log.i(null, "Registros inseridos com sucesso!" + stmt + " valores: " + titulo.getText().toString() + ", " + descricao.getText().toString() + ", " + dataDaTarefa.getText().toString());
                 bancoDados.close();
                 Log.i(null, "Conexao com banco de dados encerrada");
             } catch (Exception e) {
