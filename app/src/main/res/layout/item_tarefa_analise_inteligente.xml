@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayoutListagem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp"
+    android:background="@drawable/borda_linear_layout"
+    android:orientation="vertical"
+    android:paddingTop="10dp">
+
+    <TextView
+        android:id="@+id/textViewNTituloAnaliseInteligente"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:layout_margin="5dp"
+        android:padding="1dp"
+        android:text="Nome da Tarefa:" />
+
+    <TextView
+        android:id="@+id/textViewDataAnaliseInteligente"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:layout_margin="5dp"
+        android:padding="1dp"
+        android:text="Data: " />
+
+    <TextView
+        android:id="@+id/textViewTempoAnaliseInteligente"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:layout_margin="5dp"
+        android:padding="1dp"
+        android:text="Prazo para concluir a tarefa: " />
+
+</LinearLayout>
+

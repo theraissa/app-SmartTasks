@@ -1,12 +1,9 @@
-package com.example.prova_smarttasks;
+package com.example.prova_smarttasks.AnaliseInteligente;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,13 +13,17 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.prova_smarttasks.ListagemAdapter;
+import com.example.prova_smarttasks.R;
+import com.example.prova_smarttasks.Tarefa;
+
 import java.util.ArrayList;
 
 public class AnaliseInteligente extends AppCompatActivity {
 
     private SQLiteDatabase bancoDeDados;
     private RecyclerView recyclerView;
-    private ListagemAdapter adapter;
+    private AnaliseInteligenteAdapter adapter;
     private ArrayList<Tarefa> listaTarefas;
 
     @Override
@@ -42,7 +43,7 @@ public class AnaliseInteligente extends AppCompatActivity {
 
         listarBanco(); // preenche listaTarefas
 
-        adapter = new ListagemAdapter(this, listaTarefas);
+        adapter = new AnaliseInteligenteAdapter(this, listaTarefas);
         recyclerView.setAdapter(adapter);
     }
 
