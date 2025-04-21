@@ -62,11 +62,25 @@ public class AnaliseInteligenteAdapter  extends RecyclerView.Adapter<AnaliseInte
         Log.i("data", "data salva: " + data);
 
         Calendar calendar = Calendar.getInstance();
+        Calendar dataTarefa = Calendar.getInstance();
 
         // Obtém os componentes da data atual
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH); // Janeiro é 0, então adicionamos 1
         int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        String str = data;
+        String[] listaData = str.split("/");
+        for (String val : listaData) {
+            System.out.println(val);
+        }
+        int diaTarefa = Integer.parseInt(listaData[0]);
+        int mesTarefa = Integer.parseInt(listaData[1]);
+        int anoTarefa = Integer.parseInt(listaData[2]);
+
+        dataTarefa.set(Calendar.DAY_OF_MONTH, diaTarefa);
+        dataTarefa.set(Calendar.MONTH, mesTarefa);
+        dataTarefa.set(Calendar.YEAR, anoTarefa);
 
         return data;
 
