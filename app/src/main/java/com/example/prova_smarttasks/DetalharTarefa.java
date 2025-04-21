@@ -11,6 +11,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.prova_smarttasks.ListagemTarefa.ListagemTarefa;
+
 public class DetalharTarefa extends AppCompatActivity {
 
     private TextView nomeTarefa, descricaoTarefa, dataTarefa;

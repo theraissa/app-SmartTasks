@@ -13,7 +13,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.prova_smarttasks.ListagemAdapter;
 import com.example.prova_smarttasks.R;
 import com.example.prova_smarttasks.Tarefa;
 

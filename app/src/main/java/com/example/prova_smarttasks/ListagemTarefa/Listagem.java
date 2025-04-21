@@ -1,4 +1,4 @@
-package com.example.prova_smarttasks;
+package com.example.prova_smarttasks.ListagemTarefa;
 
 public class Listagem {
     public String nome;

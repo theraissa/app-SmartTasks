@@ -1,4 +1,4 @@
-package com.example.prova_smarttasks;
+package com.example.prova_smarttasks.ListagemTarefa;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.prova_smarttasks.DetalharTarefa;
+import com.example.prova_smarttasks.R;
+import com.example.prova_smarttasks.Tarefa;
 
 import java.util.List;
 

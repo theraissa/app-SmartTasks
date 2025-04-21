@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.prova_smarttasks.AnaliseInteligente.AnaliseInteligente;
+import com.example.prova_smarttasks.ListagemTarefa.ListagemTarefa;
 
 public class MainActivity extends AppCompatActivity {
     @Override
