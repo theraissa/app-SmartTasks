@@ -2,6 +2,7 @@ package com.example.prova_smarttasks.AnaliseInteligente;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,10 @@ import com.example.prova_smarttasks.ListagemAdapter;
 import com.example.prova_smarttasks.R;
 import com.example.prova_smarttasks.Tarefa;
 
+import java.io.Console;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class AnaliseInteligenteAdapter  extends RecyclerView.Adapter<AnaliseInteligenteAdapter.MyViewHolder>{
@@ -52,11 +57,25 @@ public class AnaliseInteligenteAdapter  extends RecyclerView.Adapter<AnaliseInte
         Tarefa tarefa = listagemTarefas.get(position);
         holder.titulo.setText(tarefa.getTitulo());
         holder.data.setText(tarefa.getData());
-        holder.prazo.setText("Calculo de quantos dias faltam");
+        holder.prazo.setText(calculoDeDias(tarefa.getData()));
     }
 
     @Override
     public int getItemCount() {
         return listagemTarefas.size();
+    }
+
+    public String calculoDeDias(String data) {
+        Log.i("data", "data salva: " + data);
+
+        Calendar calendar = Calendar.getInstance();
+
+        // Obtém os componentes da data atual
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH); // Janeiro é 0, então adicionamos 1
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        return data;
+
     }
 }

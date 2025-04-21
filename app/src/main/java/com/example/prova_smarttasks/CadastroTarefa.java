@@ -77,7 +77,7 @@ public class CadastroTarefa extends AppCompatActivity {
         String myformat = "dd/MM/yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myformat, new Locale("pt", "BR"));
         dataDaTarefa.setText(sdf.format(dataCadastroTarefa.getTime()));
-        avisoCadastroTarefa.setText("Nova Tarefa:" + sdf.format(dataCadastroTarefa.getTime()));
+        //avisoCadastroTarefa.setText("Nova Tarefa:" + sdf.format(dataCadastroTarefa.getTime()));
     }
     public boolean validarData(int ano, int mes, int dia) {
         // Cria data informada com hora zerada
