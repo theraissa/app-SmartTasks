@@ -15,6 +15,7 @@
         android:layout_margin="10dp"
         android:layout_gravity="left"
         android:padding="3dp"
+        android:textStyle="bold"
         android:text="Nome da Tarefa:" />
     <Button
         android:id="@+id/buttonDetalhar"

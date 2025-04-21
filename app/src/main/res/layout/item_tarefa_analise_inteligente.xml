@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/linearLayoutListagem"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:layout_marginBottom="15dp"
     android:background="@drawable/borda_linear_layout"
@@ -14,6 +14,7 @@
         android:layout_gravity="left"
         android:layout_margin="5dp"
         android:padding="1dp"
+        android:textStyle="bold"
         android:text="Nome da Tarefa:" />
 
     <TextView
