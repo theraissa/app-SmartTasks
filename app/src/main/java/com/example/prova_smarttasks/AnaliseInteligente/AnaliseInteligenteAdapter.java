@@ -69,11 +69,13 @@ public class AnaliseInteligenteAdapter  extends RecyclerView.Adapter<AnaliseInte
         int month = calendar.get(Calendar.MONTH); // Janeiro é 0, então adicionamos 1
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
+//        dataTarefa.set(Calendar.DAY_OF_MONTH, day);
+//        dataTarefa.set(Calendar.MONTH, month);
+//        dataTarefa.set(Calendar.YEAR, year);
+
         String str = data;
         String[] listaData = str.split("/");
-        for (String val : listaData) {
-            System.out.println(val);
-        }
+
         int diaTarefa = Integer.parseInt(listaData[0]);
         int mesTarefa = Integer.parseInt(listaData[1]);
         int anoTarefa = Integer.parseInt(listaData[2]);
@@ -82,7 +84,9 @@ public class AnaliseInteligenteAdapter  extends RecyclerView.Adapter<AnaliseInte
         dataTarefa.set(Calendar.MONTH, mesTarefa);
         dataTarefa.set(Calendar.YEAR, anoTarefa);
 
-        return data;
+        long diferencaMillis = dataTarefa.getTimeInMillis() - dataTarefa.getTimeInMillis();
+
+        return "Diferença em milissegundos: " + diferencaMillis;
 
     }
 }
