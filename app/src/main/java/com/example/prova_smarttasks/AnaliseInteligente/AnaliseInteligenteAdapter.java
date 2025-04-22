@@ -78,7 +78,7 @@ public class AnaliseInteligenteAdapter  extends RecyclerView.Adapter<AnaliseInte
         String[] listaData = str.split("/");
 
         int diaTarefa = Integer.parseInt(listaData[0]);
-        int mesTarefa = Integer.parseInt(listaData[1]);
+        int mesTarefa = Integer.parseInt(listaData[1]) - 1;
         int anoTarefa = Integer.parseInt(listaData[2]);
 
         dataTarefa.set(Calendar.DAY_OF_MONTH, diaTarefa);

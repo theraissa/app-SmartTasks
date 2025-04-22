@@ -49,7 +49,7 @@ public class AnaliseInteligente extends AppCompatActivity {
     public void listarBanco() {
         try {
             bancoDeDados = openOrCreateDatabase("tarefaDB", MODE_PRIVATE, null);
-            Cursor cursor = bancoDeDados.rawQuery("SELECT id, titulo, descricao, data FROM tarefa ORDER BY data ASC LIMIT 5", null);
+            Cursor cursor = bancoDeDados.rawQuery("SELECT id, titulo, descricao, data FROM tarefa ORDER BY data ASC", null);
 
             if (cursor.moveToFirst()) {
                 do {
