@@ -1,6 +1,7 @@
 package com.example.prova_smarttasks.AnaliseInteligente;
 
 import android.content.Context;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,13 +62,13 @@ public class AnaliseInteligenteAdapter  extends RecyclerView.Adapter<AnaliseInte
     public String calculoDeDias(String data) {
         Log.i("data", "data salva: " + data);
 
-        Calendar calendar = Calendar.getInstance();
+        Calendar dataAtual = Calendar.getInstance();
         Calendar dataTarefa = Calendar.getInstance();
 
         // Obtém os componentes da data atual
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH); // Janeiro é 0, então adicionamos 1
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        int year = dataAtual.get(Calendar.YEAR);
+        int month = dataAtual.get(Calendar.MONTH); // Janeiro é 0, então adicionamos 1
+        int day = dataAtual.get(Calendar.DAY_OF_MONTH);
 
 //        dataTarefa.set(Calendar.DAY_OF_MONTH, day);
 //        dataTarefa.set(Calendar.MONTH, month);
@@ -84,9 +85,9 @@ public class AnaliseInteligenteAdapter  extends RecyclerView.Adapter<AnaliseInte
         dataTarefa.set(Calendar.MONTH, mesTarefa);
         dataTarefa.set(Calendar.YEAR, anoTarefa);
 
-        long diferencaMillis = dataTarefa.getTimeInMillis() - dataTarefa.getTimeInMillis();
-
-        return "Diferença em milissegundos: " + diferencaMillis;
+        long diferencaMillis = dataTarefa.getTimeInMillis() - dataAtual.getTimeInMillis();
+        long dias = diferencaMillis / (1000 * 60 * 60 * 24);
+        return "Diferença em dias: " + dias;
 
     }
 }
