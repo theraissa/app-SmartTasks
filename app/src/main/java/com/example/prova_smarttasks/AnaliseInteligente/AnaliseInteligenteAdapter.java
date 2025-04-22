@@ -87,7 +87,15 @@ public class AnaliseInteligenteAdapter  extends RecyclerView.Adapter<AnaliseInte
 
         long diferencaMillis = dataTarefa.getTimeInMillis() - dataAtual.getTimeInMillis();
         long dias = diferencaMillis / (1000 * 60 * 60 * 24);
-        return "Diferença em dias: " + dias;
 
+        if (dias <= 3 && dias > 0) {
+            return "Prioridade: Urgente, faltam " + dias + "dias para a concluir a tarefa";
+        } else if (dias >= 10 && dias > 0) {
+            return "Prioridade: Média, faltam " + dias + "dias para a concluir a tarefa";
+        } else if (dias < 0){
+            return "Tarefa atrasada ou concluida " + dias;
+        } else {
+            return "Dias restantes para a terafa " + dias;
+        }
     }
 }
