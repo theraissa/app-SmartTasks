@@ -33,11 +33,11 @@ public class CalculoDeDias {
         long dias = diferencaMillis / (1000 * 60 * 60 * 24);
 
         if (dias <= 3 && dias >= 0) {
-            return "❗ Faltam " + dias + " dia(s) para concluir a tarefa";
-        } else if (dias >= 6 && dias > 0) {
-            return "⌛ Urgente: " + dias + " dia(s) restante(s)";
+            return "❗ Urgente " + dias + " dia(s) para concluir a tarefa";
+        } else if (dias <= 6 && dias >= 0) {
+            return "⌛ Faltam: " + dias + " dia(s) restante(s)";
         } else if (dias < 0){
-            return "⚠ Tarefa atrasada ou concluída há " + Math.abs(dias) + " dia(s)";
+            return "⚠️ Tarefa atrasada ou concluída há " + Math.abs(dias) + " dia(s)";
         } else {
             return "✅ " + dias + " dia(s) restante(s)";
         }
