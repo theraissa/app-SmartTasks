@@ -35,7 +35,8 @@
 
         <LinearLayout
             android:layout_width="300dp"
-            android:layout_height="350dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_gravity="center"
             android:weightSum="1"
             android:layout_margin="20dp"
@@ -56,18 +57,28 @@
             <TextView
                 android:id="@+id/textViewDescricaoTarefa"
                 android:layout_width="280dp"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_margin="20dp"
                 android:text="Descrição da tarefa"
-                android:textSize="16dp"
-                android:layout_gravity="center"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/textViewDataTarefa"
                 android:layout_width="280dp"
                 android:layout_height="30dp"
                 android:text="Data da tarefa:"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/textViewPrazo"
+                android:layout_width="280dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:text="Prazo da tarefa:"
                 android:textSize="16dp"
                 android:textStyle="bold"
                 android:layout_gravity="center"/>
