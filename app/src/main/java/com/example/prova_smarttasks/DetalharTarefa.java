@@ -15,7 +15,7 @@ import com.example.prova_smarttasks.ListagemTarefa.ListagemTarefa;
 
 public class DetalharTarefa extends AppCompatActivity {
 
-    private TextView nomeTarefa, descricaoTarefa, dataTarefa;
+    private TextView nomeTarefa, descricaoTarefa, dataTarefa, prazo;
 
 
     @Override
@@ -32,6 +32,7 @@ public class DetalharTarefa extends AppCompatActivity {
         nomeTarefa = findViewById(R.id.textViewNomeTarefa);
         descricaoTarefa = findViewById(R.id.textViewDescricaoTarefa);
         dataTarefa = findViewById(R.id.textViewDataTarefa);
+        prazo = findViewById(R.id.textViewPrazo);
 
         // Receber os dados do Intent
         Intent intent = getIntent();
@@ -39,11 +40,13 @@ public class DetalharTarefa extends AppCompatActivity {
         String titulo = intent.getStringExtra("titulo");
         String descricao = intent.getStringExtra("descricao");
         String data = intent.getStringExtra("data");
+        String prioridade = intent.getStringExtra("prioridade");
 
         // Exibir os dados na tela
         nomeTarefa.setText(titulo);
         descricaoTarefa.setText(descricao);
         dataTarefa.setText(data);
+        prazo.setText(prioridade);
     }
 
     public void AbrirTelaListagemTarefas(View v) {

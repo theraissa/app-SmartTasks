@@ -1,10 +1,12 @@
 package com.example.prova_smarttasks.AnaliseInteligente;
 
+import android.graphics.Color;
 import android.util.Log;
 
 import java.util.Calendar;
 
 public class CalculoDeDias {
+
     static public String calculoDeDias(String data) {
         Log.i("data", "data salva: " + data);
 
@@ -15,10 +17,6 @@ public class CalculoDeDias {
         int year = dataAtual.get(Calendar.YEAR);
         int month = dataAtual.get(Calendar.MONTH); // Janeiro é 0, então adicionamos 1
         int day = dataAtual.get(Calendar.DAY_OF_MONTH);
-
-//        dataTarefa.set(Calendar.DAY_OF_MONTH, day);
-//        dataTarefa.set(Calendar.MONTH, month);
-//        dataTarefa.set(Calendar.YEAR, year);
 
         String str = data;
         String[] listaData = str.split("/");
@@ -35,13 +33,13 @@ public class CalculoDeDias {
         long dias = diferencaMillis / (1000 * 60 * 60 * 24);
 
         if (dias <= 3 && dias >= 0) {
-            return "Prioridade: Urgente, faltam " + dias + " dias para a concluir a tarefa";
+            return "❗ Faltam " + dias + " dia(s) para concluir a tarefa";
         } else if (dias >= 6 && dias > 0) {
-            return "Prioridade: Média, faltam " + dias + " dias para a concluir a tarefa";
+            return "⌛ Urgente: " + dias + " dia(s) restante(s)";
         } else if (dias < 0){
-            return "Tarefa atrasada ou concluida " + dias;
+            return "⚠ Tarefa atrasada ou concluída há " + Math.abs(dias) + " dia(s)";
         } else {
-            return "Dias restantes para a terafa " + dias;
+            return "✅ " + dias + " dia(s) restante(s)";
         }
     }
 }

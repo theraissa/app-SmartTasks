@@ -1,5 +1,7 @@
 package com.example.prova_smarttasks.ListagemTarefa;
 
+import static com.example.prova_smarttasks.AnaliseInteligente.CalculoDeDias.calculoDeDias;
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.prova_smarttasks.AnaliseInteligente.CalculoDeDias;
 import com.example.prova_smarttasks.DetalharTarefa;
 import com.example.prova_smarttasks.R;
 import com.example.prova_smarttasks.Tarefa;
@@ -59,6 +62,7 @@ public class ListagemAdapter extends RecyclerView.Adapter<ListagemAdapter.MyView
             intent.putExtra("titulo", tarefa.getTitulo());  // Passando o título
             intent.putExtra("descricao", tarefa.getDescricao());  // Passando a descrição
             intent.putExtra("data", tarefa.getData());  // Passando a data
+            intent.putExtra("prioridade", calculoDeDias(tarefa.getData()));
             context.startActivity(intent);
         });
     }
