@@ -46,7 +46,7 @@
             <TextView
                 android:id="@+id/textViewNomeTarefa"
                 android:layout_width="280dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Nome tarefa"
                 android:textSize="20dp"
@@ -67,7 +67,7 @@
             <TextView
                 android:id="@+id/textViewDataTarefa"
                 android:layout_width="280dp"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:text="Data da tarefa:"
                 android:textSize="16dp"
                 android:textStyle="bold"
@@ -76,7 +76,7 @@
             <TextView
                 android:id="@+id/textViewPrazo"
                 android:layout_width="280dp"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Prazo da tarefa:"
                 android:textSize="16dp"
